@@ -1,0 +1,705 @@
+from random import randint
+import time
+fail = 0
+gewinn = 0
+answer = 0
+z = 0 
+
+print("Herzlich Willkommen zu einer Spezialausgabe von Wer wird Millionär?! Heute spielen wir komplett ohne Joker")
+name = input("Unser heutiger Kandidat heißt..?")
+
+if fail == 0: #wenn noch keine Frage falsch beantwortet wurde, folgt die nächste Frage
+    print("Es folgt die Frage um 100€. Bist du ein Nuller-Kandidat?")
+    frage1 = randint(1,2) #Frage zufällig auswählen
+    k = 1 
+    if frage1 == 1:
+        print("Welche Bedeutung hat die Redewendung up to date?") #Frage
+        print("A:pünklich")
+        print("B:spätestens")
+        print("C:vorläufig")
+        print("D:zeitgemäß") #Antwortmöglichkeiten
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D": #Abfrage der richtigen Antwort
+                print("Richtig")
+                k = 0 
+            elif answer == "A" or answer == "B" or answer == "C": #Abfrage ob die Eingabe formtechnisch richtig aber als Antwort falsch ist
+                print("Deine Antowrt ist...")
+                print("leider falsch. Richtig wäre D gewesen.")
+                fail = 1
+                gewinn = 0
+                k = 0
+                break
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?") #bei falscher Eingabe neue Antwort
+    else:
+        print("Was trägt man eher unfreiwillig?") #Frage
+        print("A: Halskette")
+        print("B: Armreif")
+        print("C: Augenringe")
+        print("D: Zungenpiercing") #Antwortmöglichkeiten
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "C": #Abfrage der richtigen Antwort
+               print("Richtige Antwort")
+               k = 0 
+            elif answer == "A" or answer == "B" or answer == "D":
+                print("Deine Antowrt ist ...")
+                print("falsch! Richtig wäre hier C gewesen")
+                fail = 1
+                gewinn = 0
+                k = 0
+                break
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60: #damit die vorherige Frage nicht sichtbar ist, wird der Bildschirm 60 Zeilen nach unten verschoben
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Es folgt die Frage um 200€.")
+    frage2 = randint(1,2) #Frage auswählen
+    k = 1
+    if frage2 == 1:
+        print("Was vereint im Sommer die Massen vor der Großbildleinwand?")
+        print("A=Public Viewing")
+        print("B=Miss Ellie Viewing")
+        print("C=Bobby Viewing")
+        print("D=J.R. Viewing")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "A":
+                print("Richtig")
+                k = 0 
+            elif answer == "B" or answer == "C" or answer == "D":
+                print("Leider die falsche Antwort. Richtig wäre A gewesen.")
+                fail = 1
+                gewinn = 100
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+                
+    else:
+        print("Die aus Ostasien stammende Staude Zingiber officinalis ist hierzulande bekannt als...?")
+        print("A: Ingwann")
+        print("B: Ingwer")
+        print("C: Ingwo")
+        print("D: Ingwieso")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Diese Antwort ist richtig.")
+                k = 0
+            elif answer == "A" or answer == "B" or answer == "C":
+                print("FALSCH! B wäre die Antwort gewesen")
+                fail = 1
+                gewinn = 100
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Nun geht es um 300€.")
+    frage3 = randint(1,2)
+    k = 1
+    if frage3 == 1:
+        print("Welche Brille gehört nicht auf den Kopf?")
+        print("A: Sonnenbrille")
+        print("B: Taucherbrille")
+        print("C: Skibrille")
+        print("D: WC-Brille")
+        answer = input ("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Und wieder richtig.")
+                k = 0 
+            elif answer == "B" or answer == "A" or answer == "C":
+                print("Tut mir leid, richtig wäre D gewesen.")
+                fail = 1
+                gewinn = 200
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Welche Fußballnation konnte bisher nie die Weltmeisterschaft im eigenen Land gewinnen?")
+        print("A: Frankreich")
+        print("B: Deutschland")
+        print("C: Brasilien")
+        print("D: Argentinien")
+        answer = input ("Deine Antwort?")
+        while k == 1:
+            if answer == "C":
+                print("Und wieder richtig.")
+                k = 0 
+            elif answer == "A" or answer == "B" or answer == "D":
+                print("Tut mir leid, richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 200
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Und wir spielen um 500€.")
+    frage4 = randint(1,2)
+    if frage4 == 1:
+        print("Seid jeher haben die meisten...?")
+        print("A: Dober Männer")
+        print("B: Cocker Spaniel")
+        print("C: Schäfer Hunde")
+        print("D: Riesen Schnauzer")
+        answer = input("Deine Anwort?")
+        while k == 1:
+            if answer == "C":
+                print("Glückwunsch.")
+                k = 0 
+            elif answer == "A" or answer == "B" or answer == "D":
+                print("Tut mir leid, richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 300
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Wer rief Winnetou ins Leben?")
+        print("A: Karl May")
+        print("B: Heinrich Heine")
+        print("C: Christopher Paolini")
+        print("D: Friedrich Schiller")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "A":
+                print("Winnetous Schöpfer war in der Tat Karl May.")
+                k = 0 
+            elif answer == "C" or answer == "B" or answer == "D":
+                print("Tut mir leid, richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 300
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+    
+if fail == 0:
+    print("Und wir sind im vierstelligen Bereich. 1.000€")
+    frage5 = randint(1,2)
+    if frage5 == 1:
+        print("Wer steht Sherlock Holmes mit Rat und Tat zur Seite?")
+        print("A: Dr. Dre")
+        print("B: Chewbacca")
+        print("C: Peter Parker")
+        print("D: Dr. Watson")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Natürlich ist es D: Dr Watson")
+                k = 0 
+            elif answer == "C" or answer == "B" or answer == "A":
+                print("Tut mir leid, richtig wäre D gewesen.")
+                fail = 1
+                gewinn = 500
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Welcher deutsche Stürmer wird auch Bomber genannt?")
+        print("A: Dieter Hoeneß")
+        print("B: Gerd Müller")
+        print("C: Uwe Seeler")
+        print("D: Rudi Völler")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Richtig! Gerd Müller war der Bomber ")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "D":
+                print("Tut mir leid, richtig wäre A gewesen.")
+                fail = 1
+                gewinn = 500
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Und wir spielen um 2.000€")
+    frage6 = randint(1,2)
+    if frage6 == 1:
+        print("Die Flagge von welchem dieser Länder ist nicht rot und weiß?")
+        print("A: Kanada")
+        print("B: Dänemark")
+        print("C: Japan")
+        print("D: Griechenland")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Richtig! Griechenland ist blau weiß.")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "B":
+                print("Richtig wäre D: Griechenland gewese.")
+                fail = 1
+                gewinn = 1000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Was wird mit der zehnstelligen ISBN-Kennzahl registriert?")
+        print("A: Telefonanschlüsse")
+        print("B: Rassehunde")
+        print("C: Bücher")
+        print("D: Transatlantikflüge")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "C":
+                print("Richtig!")
+                k = 0 
+            elif answer == "B" or answer == "A" or answer == "D":
+                print("Tut mir leid, richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 1000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Da sind wir schon bei 4.000€")
+    frage7 = randint(1,2)
+    if frage7 == 1:
+        print("Woraus wird Biodiesel gewonnen?")
+        print("A: Ginster")
+        print("B: Raps")
+        print("C: Mais")
+        print("D: Narzisse")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Richtig!")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "D":
+                print("Richtig wäre B")
+                fail = 1
+                gewinn = 2000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Zu welcher Vogelfamilie gehört die Elster?")
+        print("A: Drosseln")
+        print("B: Möwen")
+        print("C: Reiher")
+        print("D: Rabenvögel")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Richtig!")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "B":
+                print("Tut mir leid, richtig wäre B gewesen.")
+                fail = 1
+                gewinn = 2000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("8.000 € zu gewinnen für Sie", name)
+    frage8 = randint(1,2)
+    if frage8 == 1:
+        print("Welches Land ist allgemein als die `größte Demokratie der Welt`bekannt?")
+        print("A: Volksrepublik China")
+        print("B: USA")
+        print("C: Indien")
+        print("D: Frankreich")
+        answer = input("Deine Antowrt?")
+        while k == 1:
+            if answer == "C":
+                print("Richtig!")
+                k = 0 
+            elif answer == "D" or answer == "A" or answer == "B":
+                print("Tut mir leid, richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 4000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Was ist ein Meridian?")
+        print("A: Längenkreis")
+        print("B: Reiseführer")
+        print("C: Dorschfisch")
+        print("D: Rotweinrebe")
+        while k == 1:
+            if answer == "A":
+                print("Richtig!")
+                k = 0 
+            elif answer == "D" or answer == "C" or answer == "B":
+                print("Tut mir leid, richtig wäre A gewesen.")
+                fail = 1
+                gewinn = 4000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Da sind wir schon bei 16.000€ angelangt")
+    frage9 = randint(1,2)
+    if frage9 == 1:
+        print("Wer spielt in dem Film Frankenstein von James Whale das Monster?")
+        print("A: Bela Lugosi")
+        print("B: Boris Karloff")
+        print("C: Spencer Tracy")
+        print("D: Vincent PRice")
+        answer = input("Deine Antowrt")
+        while k == 1:
+            if answer == "B":
+                print("Richtig!")
+                k = 0 
+            elif answer == "D" or answer == "A" or answer == "C":
+                print("Tut mir leid, richtig wäre B gewesen.")
+                fail = 1
+                gewinn = 8000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Welcher Film stammt nicht von Roman Polanski?")
+        print("A: Frantic")
+        print("B: Chinatown")
+        print("C: Rosemaries Baby")
+        print("D: Die Farbe Lila")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Das ist die richtige Antwort!")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "B":
+                print("Richtig wäre D gewesen.")
+                fail = 1
+                gewinn = 8000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    frage10 = randint(1,2)
+    print("ES geht um einen Gewinn von 32.000€")
+    if frage10 == 1:
+        print("Welchen dieser Orte übergehen die Skispringer bei der alljährlichen Vierschanzentournee?")
+        print("A: Oberstdorf")
+        print("B: Kufstein")
+        print("C: Innsbruck")
+        print("D: Bischofshofen")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Das ist die richtige Antwort!")
+                k = 0 
+            elif answer == "C" or answer == "A" or answer == "D":
+                print("Richtig wäre B: Kufstein gewesen.")
+                fail = 1
+                gewinn = 16000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Wie heißt die Hauptstadt von Kanada?")
+        print("A: Ottawa")
+        print("B: Toronto")
+        print("C: Quebec")
+        print("D. Montreal")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "A":
+                print("Ottawa ist die Hauptstadt Kanadas")
+                k = 0 
+            elif answer == "C" or answer == "D" or answer == "B":
+                print("Richtig wäre A: Ottawa gewesen.")
+                fail = 1
+                gewinn = 16000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    frage11 = randint(1,2)
+    print("ES geht um 64.000€")
+    if frage11 == 1:
+        print("In welchem Organ wird das Hormon Insulin gebildet?")
+        print("A: Nebennnierenrinde")
+        print("B: Gallenblase")
+        print("C: Bauchspeicheldrüse")
+        print("D: Hypophyse")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "C":
+                print("Sehr gut")
+                k = 0 
+            elif answer == "A" or answer == "D" or answer == "B":
+                print("Richtig wäre C gewesen.")
+                fail = 1
+                gewinn = 32000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Wozu dient das Züngeln einer Schlange hauptsächliche?")
+        print("A: schwitzen")
+        print("B: tasten")
+        print("C: riechen")
+        print("D: Sauerstoff aufnehmen")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "C":
+                print("Richtig")
+                k = 0 
+            elif answer == "C" or answer == "D" or answer == "B":
+                print("Durch zünglen riecht eine Schlange, also ist C richtig")
+                fail = 1
+                gewinn = 32000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Und es geht um 125.000€")
+    frage12 = randint(1,2)
+    if frage12 == 1:
+        print("Wo steht der Wolkenkratzer Petronas Twin Towers?")
+        print("A: Seoul")
+        print("B: Kuala Lumpur")
+        print("C: Singapur")
+        while k == 1:
+            if answer == "B":
+                print("Richtige Antwort")
+                k = 0 
+            elif answer == "C" or answer == "D" or answer == "A":
+                print("A wäre richtig gewesen")
+                fail = 1
+                gewinn = 64000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Was wurde in der Antike und im Mittelalter als Schwarzgalligkeit bezeichnet?")
+        print("A: Blutarmut")
+        print("B: Melancholie")
+        print("C: Schwindsucht")
+        print("D: Sodomie")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Richtig")
+                k = 0 
+            elif answer == "C" or answer == "D" or answer == "A":
+                print("Melancholie wurde als Schwarzgalligkeit bezeichnet")
+                fail = 1
+                gewinn = 64000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1    
+
+if fail == 0:
+    print("Und es geht um eine Viertelmillion €. 250.000€")
+    frage13 = randint(1,2)
+    if frage13 == 1:
+        print("Was ist ein Schweifstern?")
+        print("A: Asteroid")
+        print("B: Komet")
+        print("C: Planet")
+        print("D: Supernova")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Richtig. Ein Komet wird auch Schweifstern genannt.")
+                k = 0
+            elif answer == "C" or answer == "D" or answer == "A":
+                print("Leider falsch. Richtig wäre B gewesen")
+                fail = 1
+                gewinn = 125000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Welcher der folgenden Soldaten war nicht beritten?")
+        print("A: Grenadier")
+        print("B: Husar")
+        print("C: Dragoner")
+        print("D: Ulan")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "A":
+                print("Richtig")
+                k = 0
+            elif answer == "C" or answer == "D" or answer == "B":
+                print("Leider falsch. Richtig wäre A gewesen")
+                fail = 1
+                gewinn = 125000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Es geht um 500.000€")
+    frage14 = randint(1,2)
+    if frage14 == 1:
+        print("Welcher Verein war länger als nur eine Saison in der Ersten Fußball-Bundesliga vertreten?")
+        print("A: FC Homburg")
+        print("B: Fortuna Köln")
+        print("C: VfB Leipzig")
+        print("D: Preußen Münster")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "A":
+                print("Richtig. Der FC Homburg war in der Saison 1986/87 und 87/88 erstklassig")
+                k = 0
+            elif answer == "C" or answer == "D" or answer == "B":
+                print("Leider falsch. Richtig wäre A gewesen")
+                fail = 1
+                gewinn = 250000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Wie heißt das leichteste aller Metalle?")
+        print("A: Aluminium")
+        print("B: Lithium")
+        print("C: Quecksilber")
+        print("D: Titan")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Richtig")
+                k = 0
+            elif answer == "C" or answer == "D" or answer == "A":
+                print("Richtig wäre B gewesen")
+                fail = 1
+                gewinn = 250000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    time.sleep(4)
+    while z < 60:
+        print("")
+        z += 1
+    z = 0
+    k = 1
+
+if fail == 0:
+    print("Sie haben nun 14 Fragen ohne Joker richtig beantwortet nun geht es in der letzten Frage unserer Spezialausgabe nicht um eine sondern um zwei Millionen Euro")
+    frage15 = randint(1,2)
+    if frage15 == 1:
+        print("Welche Straße verband das antike Rom mit Pisa?")
+        print("A: Via Appia")
+        print("B: Via Aurelia")
+        print("C: Via Cassia")
+        print("D: Via Claudia Augusta")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "B":
+                print("Glückwunsch diese Antwort ist richtig")
+                k = 0
+                gewinn = 2000000
+            elif answer == "C" or answer == "D" or answer == "A":
+                print("Richtig wäre B gewesen")
+                fail = 1
+                gewinn = 500000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+    else:
+        print("Gegen welche Auswahl absolvierte die Nationalmannschaft der DDR 1952 ihr erstes Fußball-Länderspiel?")
+        print("A: Schweiz")
+        print("B: Sowjetunion")
+        print("C: Schweden")
+        print("D: Polen")
+        answer = input("Deine Antwort?")
+        while k == 1:
+            if answer == "D":
+                print("Glückwunsch, diese Antwort ist richtig")
+                k = 0
+                gewinn = 2000000
+            elif answer == "C" or answer == "B" or answer == "A":
+                print("Richtig wäre D gewesen")
+                fail = 1
+                gewinn = 500000
+                k = 0
+            else:
+                answer = input("Nur A;B;C oder D ist zulässig. Deine Antwort?")
+                
+if gewinn == 0:
+    print("Tja du bist leider ein Nuller geworden.") #Ende, wenn die erste Frage falsch war
+else:
+    print("Glückwunsch", name , "! Du hast", gewinn , "€ gewonnen.") #Ende, wenn andere Fragen falsch beantwortet wurden
